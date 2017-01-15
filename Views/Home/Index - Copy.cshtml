@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "JoinUp Map";
+}
+
+<div id="map_canvas" style="width:100%; height: 350px;"></div>
+
+<p>    
+    @*<button id="watchPositionButton">Watch Position</button>*@
+    <button id="stopWatchButton">Stop Watch</button>
+</p>
+
+@*<div id="map" style="width:100%;height:512px;" data-bind="mapsGoog: {name: name, config: config, marker: marker }"></div>*@
+@*<form>
+    <input type="button" onclick="getLocationUpdate();" value="Watch Update" />
+</form>*@
+
+<ul id="name"></ul>
+<ul id="messages"></ul>
+
+@section scripts {
+     
+    @Scripts.Render("~/Scripts/jquery.signalR-2.2.1.min.js")
+    @Scripts.Render("~/signalr/hubs")
+    @Scripts.Render("http://maps.googleapis.com/maps/api/js?key=AIzaSyBlEx3uDXMx74c5c_1NrwtoNrUON1KeV8I");
+    @Scripts.Render("~/Scripts/TAActivity.js")
+
+}

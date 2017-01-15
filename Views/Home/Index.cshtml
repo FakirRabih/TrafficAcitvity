@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "JoinUp Map";
+}
+
+<div class="container">
+    @*<input type="text" id="message" />
+    <input type="text" id="displayname" />
+    <input type="text" id="messages"  />*@
+
+    @*<input type="button" id="sendmessage" value="Send" />*@
+    @*<input type="text" id="displayname" value="@User.Identity.Name" />*@
+    @*<input type="hidden" id="token" value="@ViewBag.Token" />*@
+    <ul id="discussion"></ul>
+</div>
+
+@*<div id="clientCount"></div>*@
+<p id="clientCount" style="top: 0; right: 10px; font-size: 72px;color: #cdcdcd;"> </p>
+
+<p id="ErrMessage"> </p> 
+<div id="map" style="height:400px;"> </div> 
+<p>    
+    @*<button id="watchPositionButton">Watch Position</button>*@
+    @*<button id="stopWatchButton">Stop Watch</button>*@
+</p>
+
+@*<div id="map" style="width:100%;height:512px;" data-bind="mapsGoog: {name: name, config: config, marker: marker }"></div>*@
+@*<form>
+    <input type="button" onclick="getLocationUpdate();" value="Watch Update" />
+</form>*@
+<div class="container">
+    <ul id="messages"></ul>
+    <ul id="message"></ul>
+    <ul id="displayname"></ul><ul id="latitude"></ul><ul id="longitude"></ul><ul id="time"></ul>
+</div>
+
+
+    @section scripts {
+
+        @Scripts.Render("~/Scripts/jquery.signalR-2.2.1.min.js")
+        @Scripts.Render("~/signalr/hubs")
+        @Scripts.Render("http://maps.googleapis.com/maps/api/js?key=AIzaSyBlEx3uDXMx74c5c_1NrwtoNrUON1KeV8I");
+        @Scripts.Render("~/Scripts/TrAActivity.js")
+
+    }
