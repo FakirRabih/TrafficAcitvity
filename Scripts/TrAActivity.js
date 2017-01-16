@@ -1,6 +1,6 @@
 ﻿var map,
       marker, // marker showing user's current location
-      coords = new google.maps.LatLng(36, 3);  // default coords
+      coords = new google.maps.LatLng(45, 26);  // default coords
 // position options
 var MAXIMUM_AGE = 200; // miliseconds
 var TIMEOUT = 300000;
@@ -21,16 +21,11 @@ function setMarker(pos, name) {
         title: Title
     });
     map.panTo(coords);
-    //$("#messages").append('<li>' + lat + ', ' + lng + ', ' + ', ' + speed + ', ' + dateTime + '</li>');
-
 }
 
 //(function () { 
 hub = $.connection.mapHub;
 $clientCount = $("#clientCount");
-//$messages = $("#messages");
-//$messages = $("#messages").append('<li>' + name + ' Is @: ' + '</li>');
-//$messages = $('#messages').append('<li><strong>' + htmlEncode(name) + '</li>');
 
 // This optional function html-encodes messages for display in the page.
 
@@ -63,10 +58,7 @@ $.connection.hub.start().done(function () {
     init();
     hub.server.placeMarker(
                         $('#displayname').val()
-                       // $('#messages').val(),
-                     // $('#latitude').val(), $('#longitude').val(), $('#time').val(), $('#speed').val()
-
-                    );
+                      );
 });
 //}());
 function htmlEncode(value) {
@@ -122,7 +114,6 @@ function init() {
         coords = new google.maps.LatLng(lat, lng);
         marker.setPosition(coords);
         map.panTo(coords);
-      //  $("#messages").append('<li>' + lat + ', ' + lng + ', ' + dateTime + ', ' + speed + '</li>');
-
+  
     }, geo_error, options);
 }
